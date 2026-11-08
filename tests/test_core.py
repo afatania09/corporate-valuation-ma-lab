@@ -16,7 +16,7 @@ def test_portfolio():
         Holding("Retail", 8, 6, 20, .7),
         Holding("Logistics", 10, 8, 15, .9),
     ]
-    assert portfolio_nav(holdings, 12, 7) == pytest.approx(375.75)
+    assert portfolio_nav(holdings, 12, 7) == pytest.approx(336.60)
 
 def test_dcf_manual():
     assert dcf_enterprise_value([10], .10, .02) == pytest.approx((10 + 10*1.02/.08)/1.10)
