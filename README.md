@@ -16,9 +16,10 @@ python -m examples.healthcare_investment_committee
 python -m examples.integrated_lbo_case
 python -m examples.exit_waterfall_ppa
 python -m examples.acquisition_ic_report
+python -m examples.full_deal_review
 ```
 
-The last example writes `investment_committee_example.md` in the working directory.
+The acquisition IC example writes `investment_committee_example.md`. The full deal review creates `outputs/investment_committee.md`, `outputs/sensitivity.json`, and `outputs/audit_manifest.json`.
 
 ## Model catalogue
 
@@ -39,6 +40,8 @@ The last example writes `investment_committee_example.md` in the working directo
 | Preferred equity waterfall | `valuation_lab/waterfall.py` | Preference vs conversion proceeds |
 | Acquisition PPA | `valuation_lab/ppa.py` | Identifiable net assets, DTL, goodwill |
 | Investment committee memo | `valuation_lab/memo.py` | Markdown IC report |
+| Deal sensitivity | `valuation_lab/deal_sensitivity.py` | Entry/exit multiple return grid |
+| Audit manifest | `valuation_lab/audit.py` | Deterministic input/result SHA-256 |
 
 ## Representative fictional healthcare transaction
 
