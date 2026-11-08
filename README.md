@@ -17,6 +17,7 @@ python -m examples.integrated_lbo_case
 python -m examples.exit_waterfall_ppa
 python -m examples.acquisition_ic_report
 python -m examples.full_deal_review
+python -m examples.evidence_quality_gate
 ```
 
 The acquisition IC example writes `investment_committee_example.md`. The full deal review creates `outputs/investment_committee.md`, `outputs/sensitivity.json`, and `outputs/audit_manifest.json`.
@@ -42,6 +43,7 @@ The acquisition IC example writes `investment_committee_example.md`. The full de
 | Investment committee memo | `valuation_lab/memo.py` | Markdown IC report |
 | Deal sensitivity | `valuation_lab/deal_sensitivity.py` | Entry/exit multiple return grid |
 | Audit manifest | `valuation_lab/audit.py` | Deterministic input/result SHA-256 |
+| Evidence quality gates | `valuation_lab/evidence.py` | Source register, date/currency checks, synthetic-data controls |
 
 ## Representative fictional healthcare transaction
 
@@ -67,7 +69,7 @@ Run `python -m examples.acquisition_ic_report` to calculate actual projected res
 
 This is **not** a commercial-grade audited valuation system. In particular, the acquisition model does not produce a full post-deal consolidated balance sheet; the PPA is a simplified 100% acquisition bridge; the preferred equity waterfall models only one non-participating class; and the fund NAV model assumes pro-rata ordinary equity. No independent market data are bundled or silently fabricated.
 
-Read `docs/METHODOLOGY.md`, `docs/THREE_STATEMENT_LBO.md`, `docs/ADVANCED_VALUATION.md`, and `docs/ACQUISITION_MODEL.md` before relying on results.
+Read `docs/METHODOLOGY.md`, `docs/THREE_STATEMENT_LBO.md`, `docs/ADVANCED_VALUATION.md`, `docs/ACQUISITION_MODEL.md`, and `docs/DATA_PROVENANCE.md` before relying on results.
 
 ## Future professional extensions
 
