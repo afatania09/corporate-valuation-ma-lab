@@ -18,6 +18,7 @@ python -m examples.exit_waterfall_ppa
 python -m examples.acquisition_ic_report
 python -m examples.full_deal_review
 python -m examples.evidence_quality_gate
+python -m examples.strategic_acquisition_underwriting
 ```
 
 The acquisition IC example writes `investment_committee_example.md`. The full deal review creates `outputs/investment_committee.md`, `outputs/sensitivity.json`, and `outputs/audit_manifest.json`.
@@ -43,6 +44,7 @@ The acquisition IC example writes `investment_committee_example.md`. The full de
 | Investment committee memo | `valuation_lab/memo.py` | Markdown IC report |
 | Deal sensitivity | `valuation_lab/deal_sensitivity.py` | Entry/exit multiple return grid |
 | Audit manifest | `valuation_lab/audit.py` | Deterministic input/result SHA-256 |
+| Strategic acquisition bid underwriting | `valuation_lab/deal_underwriting.py` | After-tax synergy NPV, acquisition bid ceiling, buyer NPV and downside cases |
 | Evidence quality gates | `valuation_lab/evidence.py` | Source register, date/currency checks, synthetic-data controls |
 
 ## Representative fictional healthcare transaction
@@ -57,6 +59,10 @@ The acquisition IC example writes `investment_committee_example.md`. The full de
 
 Run `python -m examples.acquisition_ic_report` to calculate actual projected results and generate the investment committee report. Figures are fictional, not observed market data.
 
+## Strategic M&A underwriting example
+
+Run `python -m examples.strategic_acquisition_underwriting` to compare base, downside and severe acquisition cases. The model calculates after-tax synergy cash flows, integration spending, a break-even maximum enterprise-value bid and buyer value creation or destruction. It is an **unlevered strategic acquisition screen**, not an EPS accretion or purchase accounting model. All example assumptions are fictional. See [deal underwriting methodology](docs/DEAL_UNDERWRITING.md).
+
 ## Quality controls
 
 - Pytest tests under `tests/`
@@ -69,7 +75,7 @@ Run `python -m examples.acquisition_ic_report` to calculate actual projected res
 
 This is **not** a commercial-grade audited valuation system. In particular, the acquisition model does not produce a full post-deal consolidated balance sheet; the PPA is a simplified 100% acquisition bridge; the preferred equity waterfall models only one non-participating class; and the fund NAV model assumes pro-rata ordinary equity. No independent market data are bundled or silently fabricated.
 
-Read `docs/METHODOLOGY.md`, `docs/THREE_STATEMENT_LBO.md`, `docs/ADVANCED_VALUATION.md`, `docs/ACQUISITION_MODEL.md`, and `docs/DATA_PROVENANCE.md` before relying on results.
+Read `docs/DEAL_UNDERWRITING.md`, `docs/METHODOLOGY.md`, `docs/THREE_STATEMENT_LBO.md`, `docs/ADVANCED_VALUATION.md`, `docs/ACQUISITION_MODEL.md`, and `docs/DATA_PROVENANCE.md` before relying on results.
 
 ## Future professional extensions
 
