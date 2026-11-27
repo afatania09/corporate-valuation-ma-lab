@@ -75,6 +75,10 @@ Run `python -m examples.microsoft_activision_case` to reconstruct the final $75.
 
 The `valuation_lab/merger_eps.py` module separately screens annualised EPS accretion/dilution under mixed acquisition funding.
 
+## Historical context: Blackstone / Hilton
+
+Run `python -m examples.hilton_lbo_case` for a stylised sponsor underwriting scenario anchored to the approximately $26bn 2007 buyout and six-year period to the 2013 IPO. Financing, exit EBITDA, multiples and debt are hypothetical; the IPO is not treated as an actual full sponsor exit. Annualised returns assume a single terminal distribution and omit fees and interim cash flows. See Hilton's 2013 Form S-1 via SEC EDGAR (CIK 1585689) for historical context.
+
 ## Quality controls
 
 - Pytest tests under `tests/`
