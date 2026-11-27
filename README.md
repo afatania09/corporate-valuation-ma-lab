@@ -31,7 +31,7 @@ python -m pip install -r requirements-dashboard.txt
 python -m streamlit run dashboard.py
 ```
 
-The dashboard exposes sponsor LBO and annualised merger EPS scenarios with editable assumptions and downloadable CSV results. It runs locally; no hosted deployment is claimed. Inputs are illustrative, not investment recommendations.
+The dashboard exposes sponsor LBO and annualised merger EPS scenarios with editable assumptions and downloadable CSV results and a formula-linked editable LBO Excel workbook. It runs locally; no hosted deployment is claimed. Inputs are illustrative, not investment recommendations.
 
 ## Model catalogue
 
