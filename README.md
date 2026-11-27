@@ -2,7 +2,7 @@
 
 **Open-source Python valuation and transaction-modelling portfolio** covering enterprise valuation, private equity portfolio NAV, financial forecasting, acquisitions, leveraged buyouts, purchase accounting and investment committee reporting.
 
-> **Scope:** A reproducible educational and research project. All bundled company examples are fictional. It is not an independent valuation opinion, investment advice, or a claim of IFRS 13 / IPEV / RICS compliance.
+> **Scope:** A reproducible educational and research project. Most bundled examples are fictional; historical cases explicitly identify their public sources. It is not an independent valuation opinion, investment advice, or a claim of IFRS 13 / IPEV / RICS compliance.
 
 ## Quick start
 
@@ -69,6 +69,12 @@ Run `python -m examples.strategic_acquisition_underwriting` to compare base, dow
 
 Run `python -m examples.acquisition_closing_bridge` for a fictional transaction showing seller equity consideration, refinancing, seller rollover, financing fees, buyer cash, target cash sweep and the residual sponsor equity requirement. The sources and uses are reconciled to zero. The module assumes freely sweepable target cash and full refinancing of target debt; see [completion bridge methodology](docs/SOURCES_AND_USES.md).
 
+## Real transaction: Microsoft / Activision Blizzard
+
+Run `python -m examples.microsoft_activision_case` to reconstruct the final $75.408bn purchase accounting disclosed in Microsoft's FY2025 Form 10-K, and calculate hypothetical perpetual FCFF hurdles across discount-rate and growth scenarios. The case is retrospective, not an independent valuation or measured deal return.
+
+The `valuation_lab/merger_eps.py` module separately screens annualised EPS accretion/dilution under mixed acquisition funding.
+
 ## Quality controls
 
 - Pytest tests under `tests/`
@@ -79,7 +85,7 @@ Run `python -m examples.acquisition_closing_bridge` for a fictional transaction 
 
 ## Important limitations
 
-This is **not** a commercial-grade audited valuation system. In particular, the acquisition model does not produce a full post-deal consolidated balance sheet; the PPA is a simplified 100% acquisition bridge; the preferred equity waterfall models only one non-participating class; and the fund NAV model assumes pro-rata ordinary equity. No independent market data are bundled or silently fabricated.
+This is **not** a commercial-grade audited valuation system. In particular, the acquisition model does not produce a full post-deal consolidated balance sheet; the PPA is a simplified 100% acquisition bridge; the preferred equity waterfall models only one non-participating class; and the fund NAV model assumes pro-rata ordinary equity. Historical accounting disclosures are separately sourced; no live market dataset is bundled.
 
 Read `docs/SOURCES_AND_USES.md`, `docs/DEAL_UNDERWRITING.md`, `docs/METHODOLOGY.md`, `docs/THREE_STATEMENT_LBO.md`, `docs/ADVANCED_VALUATION.md`, `docs/ACQUISITION_MODEL.md`, and `docs/DATA_PROVENANCE.md` before relying on results.
 
