@@ -24,6 +24,15 @@ python -m examples.acquisition_closing_bridge
 
 The acquisition IC example writes `investment_committee_example.md`. The full deal review creates `outputs/investment_committee.md`, `outputs/sensitivity.json`, and `outputs/audit_manifest.json`.
 
+## Interactive dashboard
+
+```bash
+python -m pip install -r requirements-dashboard.txt
+python -m streamlit run dashboard.py
+```
+
+The dashboard exposes sponsor LBO and annualised merger EPS scenarios with editable assumptions and downloadable CSV results. It runs locally; no hosted deployment is claimed. Inputs are illustrative, not investment recommendations.
+
 ## Model catalogue
 
 | Area | Python module | Main output |
