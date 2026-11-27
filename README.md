@@ -98,9 +98,18 @@ Run `python -m examples.hilton_lbo_case` for a stylised sponsor underwriting sce
 
 ## Important limitations
 
-This is **not** a commercial-grade audited valuation system. In particular, the acquisition model does not produce a full post-deal consolidated balance sheet; the PPA is a simplified 100% acquisition bridge; the preferred equity waterfall models only one non-participating class; and the fund NAV model assumes pro-rata ordinary equity. Historical accounting disclosures are separately sourced; no live market dataset is bundled.
+This is **not** a commercial-grade audited valuation system. In particular, the acquisition model does not produce a full post-deal consolidated forecast (a separate simplified acquisition-date balance sheet bridge is available in `valuation_lab/consolidation.py`); the PPA is a simplified 100% acquisition bridge; the preferred equity waterfall models only one non-participating class; and the fund NAV model assumes pro-rata ordinary equity. Historical accounting disclosures are separately sourced; no live market dataset is bundled.
 
 Read `docs/SOURCES_AND_USES.md`, `docs/DEAL_UNDERWRITING.md`, `docs/METHODOLOGY.md`, `docs/THREE_STATEMENT_LBO.md`, `docs/ADVANCED_VALUATION.md`, `docs/ACQUISITION_MODEL.md`, and `docs/DATA_PROVENANCE.md` before relying on results.
+
+## Release verification checklist
+
+- Run `python -m pip install -r requirements-dev.txt -r requirements-dashboard.txt`.
+- Run `python -m pytest -q` and inspect failures before release.
+- Launch `python -m streamlit run dashboard.py` and exercise both tabs.
+- Download the LBO workbook, open in Excel, and reconcile recalculated outputs against the dashboard.
+- Verify historical accounting figures against original filings; hypothetical Hilton returns are not actual sponsor returns.
+- Review acquisition-date consolidation assumptions: 100% cash purchase, no minority interests, no existing ownership, fees expensed.
 
 ## Future professional extensions
 
