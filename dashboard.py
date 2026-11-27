@@ -1,6 +1,7 @@
 """Run: streamlit run dashboard.py"""
 import streamlit as st
 from examples.hilton_lbo_case import scenario
+from valuation_lab.excel_export import lbo_workbook
 from valuation_lab.merger_eps import MergerInputs, merger_eps
 
 st.set_page_config(page_title="Corporate Finance Lab", layout="wide")
@@ -23,6 +24,7 @@ with lbo:
         c.metric("Exit equity",f"${r['exit_equity']:.2f}bn")
         st.bar_chart({"Entry equity": [r["entry_equity"]], "Exit equity": [r["exit_equity"]]})
         st.download_button("Export LBO results (CSV)",",".join(r)+"\n"+",".join(str(v) for v in r.values()),"lbo.csv","text/csv")
+        st.download_button('Export editable Excel model', lbo_workbook(ev,debt,e,m,d,years), 'lbo.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     except ValueError as exc:
         st.error(str(exc))
 with merger:
